@@ -1,3 +1,4 @@
+
 .body{
     margin:0;
     padding:0;
@@ -24,8 +25,8 @@ header{
     justify-content: space-between;
     padding: 10px 40px;
     z-index: 999;
-    background-color: white;
-    backdrop-filter: blur(10px);
+    
+    backdrop-filter: blur(20px);
 }
 
 .head-left{
@@ -34,23 +35,14 @@ header{
 }
 
 .head-left img{
-    width : 40px;
-    height: 40px;
-    margin-right: 20px;
+    border-width: 10px;
+    box-shadow: 20px #edff66;
+    width : 58px;
+    height: 55px;
+    backdrop-filter: blur(100px);
+    border-radius: 5px;
 }
 
-.head-left button{
-    border: none;
-    padding: 10px 30px;
-    border-radius: 20px;
-    font-weight:700;
-    cursor: pointer;
-    transition: 0.3s;
-}
-.head-left button:hover{
-    opacity: 0.7;
-
-}
 
 .head-right{
     display: flex;  
@@ -59,13 +51,194 @@ header{
 .head-right a{
     text-decoration: none;
     padding-left: 25px;
-    color: black;
+    color: white;
     font-size: 15px;
      
 }
 
 
 
+/* here*/
+
+.hero-section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.hero-vid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 
+.hero-info{
+    z-index: 1;
+    position: absolute;
+    top: 88px;
+    left: 50px;
+}
 
+.hero-info h1{
+    color: white;
+    font-size: 120px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.hero-info p{
+    color: white;
+    max-width: 240px;
+    text-shadow: 0 0 20px;
+    margin-left: 10px;
+}
+
+.hero-info button{
+    background-color: #edff66;
+    border: 2px solid #edff66;
+    padding: 10px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    transition: 0.4s;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.hero-info button:hover{
+    background-color: transparent;
+    color: white;
+    text-shadow: 0 0 18px;
+    box-shadow: 0 0 15px #edff66;
+}
+
+.REIMAGINE{
+    font-size: 120px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    bottom: 50px;
+    color: white;
+}
+
+@keyframes swipeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.next-btn {
+  background-color: #edff66;
+  border: 2px solid #edff66;
+  padding: 10px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.4s;
+
+  position: absolute;
+  right: 55px;
+  bottom: 165px;
+  z-index: 10;
+
+  animation: swipeAnimation 1s infinite ease-in-out;
+}
+
+/* 🔇 Stop animation on hover */
+.next-btn:hover {
+  animation-play-state: paused;
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 0 18px;
+  box-shadow: 0 0 15px #edff66;
+}
+
+.about-section{
+    width: 100%;
+    height: 100%;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.image-box{
+    width: 360px;
+    height: 510px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+
+.image-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-section p{
+    font-size: 12px;
+    color:black;
+}
+
+
+.about-section h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 900;
+    font-size: 100px;
+    max-width: 1150px;
+    text-align: center;
+    margin: 25px 0;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #4acfee, #53f8c9, #02d79a, #6070fd, #2a46ff, #0099ff, #4acfee);
+
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+    
+}
+
+@keyframes animate-gradient{
+    to{
+        background-color: 200%;
+    }
+}
+
+.about-section h4{
+    margin-top: 50px;
+    margin-bottom: 0;
+    color: black;
+}
+
+.about-section h5{
+    margin-top: 5px;
+    color: gray;
+    max-width: 425px;
+    text-align: center;
+    line-height: 25px;
+}
