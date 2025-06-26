@@ -67,30 +67,28 @@
                 <div class="card">
                     <h1>Concierto</h1>
                     <p>Udaan sets the stage for LPU’s most epic concerts—where music, energy, and crowd frenzy collide. With dazzling lights, electrifying lineups, and unforgettable vibes, our shows aren’t just events—they’re legends in the making. Join the roar, feel the rhythm, and be part of LPU’s loudest, proudest moments with Udaan.</p>
-                    <video src="../res/feature-1.mp4" autoplay loop muted plays-inline></video>
+                    <video src="../res/concierto.mp4" autoplay loop muted plays-inline></video>
+                    <button>Register</button>
+                </div>
+                
+                <div class="card autoDisplay">
+                    <h1>Hackathons</h1>
+                    <p>Udaan’s hackathons fuse tech, caffeine, and creativity into one high-voltage experience. Think 24 hours of rapid prototyping, buzzing minds, and breakthrough ideas. It’s not just code—it’s culture. At LPU, these events are launchpads where innovation ignites, collaboration thrives, and the next big thing gets its start.</p>
+                    <video src="../res/hackathon.mp4" autoplay loop muted plays-inline></video>
                     <button>Register</button>
                 </div>
 
                 <div class="card autoDisplay">
                     <h1>Aventura</h1>
-                    <p>Adventure begins where lectures end. Udaan takes LPU beyond the classroom with breathtaking trips across India—think snow-clad peaks, golden sunsets, and stories made on the go. These aren’t just excursions—they're unforgettable chapters of your college journey. Travel with Udaan, and turn wanderlust into legacy.</p>
-                    <video src="../res/feature-3.mp4" autoplay loop muted plays-inline></video>                   
-                </div>
-
-                <div class="card autoDisplay">
-                    <h1>Hackathons</h1>
-                    <p>Udaan’s hackathons fuse tech, caffeine, and creativity into one high-voltage experience. Think 24 hours of rapid prototyping, buzzing minds, and breakthrough ideas. It’s not just code—it’s culture. At LPU, these events are launchpads where innovation ignites, collaboration thrives, and the next big thing gets its start.</p>
-                    <video src="../res/feature-2.mp4" autoplay loop muted plays-inline></video>
-                    <button>Register</button>
-                </div>
-
-                 
-
+                    <p>Adventure begins where lectures end. Udaan takes LPU beyond classrooms with unforgettable trips across India—snowy peaks, golden sunsets, and lasting memories. Travel with Udaan and turn wanderlust into legacy.</p>
+                    <video id="slow" src="../res/adventura.mp4" autoplay loop muted plays-inline></video> 
+                    <button>Register</button>                  
+                </div> 
 
                 <div class="card autoDisplay">
                 <h1>Embark</h1>
                 <p>On your new journey with us ...</p>
-                <video src="../res/feature-5.mp4"  autoplay loop muted plays-inline></video>
+                <video src="../res/embark.mp4"  autoplay loop muted plays-inline></video>
                 <button>Join Us</button>                 
                 </div>
 
@@ -99,21 +97,21 @@
                 <div class="card autoDisplay">
                     <h1>Meet your Leaders</h1>
                     <p>The phenomenals who keep this club growing  </p>
-                    <video src="../res/feature-4.mp4" autoplay loop muted plays-inline></video>
+                    <video src="../res/leaders.mp4" autoplay loop muted plays-inline></video>
                     <button>Discover</button>
                 </div>
 
                
 
                 <div class="card autoDisplay">
-                    <h1></h1> 
-                    <video src="../res/feature-6.mp4" autoplay loop muted plays-inline></video>                 
+                    <h1>Coming-Soon</h1> 
+                    <video src="../res/coming-soon.mp4" autoplay loop muted plays-inline></video>                 
                 </div>
 
             </div>
         </section>
 
-        <section class="contact-section">
+        <section class="contact-section" >
             <p>Join Udaan</p>
             <div class="autoBlur">
                 <h1>BRING ABOUT THE NEW ERA OF UNIVERSITY EVENTS</h1>
@@ -122,7 +120,7 @@
             <button>Contact Us </button>
             <img class="img-1" src="../res/img-1.png" alt="contact-img">
             <img class="img-2" src="../res/img-2.jpg" alt="contact-img">
-            <img class="img-3" src="../res/img-3.png" alt="contact-img">
+            <img class="img-3" src="../res/logo.png" alt="contact-img">
         </section>
 
         <section class="footer">
@@ -137,5 +135,10 @@
         </section>
     </div>
     <script src="../frontend/app.js"></script>
+
+    <script>
+    const video = document.getElementById("slow");
+    video.playbackRate = 0.1; // 1 = normal, 1.5 = 1.5x speed
+    </script>
  </body>
 </html>

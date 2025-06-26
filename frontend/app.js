@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         contactBtn.addEventListener("click", function(e) {
             e.preventDefault();
             window.scrollTo({
-                top: 7250,
+                top: 7000,
                 behavior: 'smooth'
             });
         });

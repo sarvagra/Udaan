@@ -330,7 +330,7 @@ header{
 .card p {
     position: absolute;
     top: 80px;
-    left: 4%;
+    left: 50px;
     z-index: 1;
     max-width: 500px;
     color: white;
@@ -338,7 +338,7 @@ header{
     font-size: 15px;
     padding: 5px 15px;
 
-    text-shadow: 5px 5px 15px black; /* 👈 black shadow around text */
+    text-shadow: 5px 5px 20px solid black;
 }
 
 
@@ -351,11 +351,11 @@ header{
 .card button{
     position :absolute;
     bottom: 5%;
-    left: 5%;
+    left: 60px;
     padding:10px 25px;
     border:1px solid gray;
     background-color:#0f1217;
-    color: gray;
+    color: white;
     border-radius:20px;
     box-shadow:0 0 5px lightgray;
     cursor:pointer;
@@ -363,8 +363,10 @@ header{
 }
 
 .card button:hover{
-    box-shadow: 0 0 15px lightgray;
-    opacity: 0.7;
+    background-color: black;
+    color: greenyellow;
+    text-shadow: 0 0 18px;
+    box-shadow: 0px 0px 20px greenyellow;
 }
 
 .card:hover{
@@ -376,6 +378,11 @@ header{
 .card:nth-child(2){
     grid-row: span 2;
     height: 57vh;
+    
+}
+.card:nth-child(3) p{
+    max-width: 350px;
+    
 }
 
 .card:nth-child(3){
@@ -412,9 +419,9 @@ header{
 }
 
 .card:nth-child(3) h1 {
-    background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
+    background: linear-gradient(to right,#ffb347, #ffcc33, #fceabb, #f8b500, #f6e27a, #f9d423, #ffb347);
     background-size: 200%;
-    text-shadow: 5px 5px 0 white;
+    text-shadow: 5px 5px 0 black;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -432,6 +439,16 @@ header{
 }
 
 .card:nth-child(5) h1 {
+    background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
+    background-size: 200%;
+    text-shadow: 5px 5px 0 white;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+    height: 20;
+}
+.card:nth-child(6) h1 {
     background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
     background-size: 200%;
     text-shadow: 5px 5px 0 white;
@@ -511,8 +528,10 @@ header{
 }
 
 .contact-section button:hover{
-    box-shadow: 0 0 15px lightgray;
-    opacity: 0.7;
+    background-color: transparent;
+    color: white;
+    text-shadow: 0 0 18px;
+    box-shadow: 0 0 15px #edff66;
 }
 
 .footer{
@@ -538,6 +557,7 @@ header{
 }
 
 .footer a{
+    font-size: 2.5vh;
     text-decoration: none;
     color: white;
     padding: 7px 7px;
@@ -550,7 +570,7 @@ header{
 .overlay{
     position: absolute;
     margin-top: 22%;
-    width: 500px;
+    width: 900px;
     z-index: 2;
 }
 /* blur animation */
@@ -610,64 +630,166 @@ header{
     }
 }
 
+@media screen and (max-width: 650px) {
+    header {
+        padding: 10px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-@media screen and (max-width:650px){
-    header{
+    .head-left img {
+        width: 45px;
+        height: 42px;
+    }
+
+    .head-right {
+        margin-top: 5px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .head-right a {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .hero-info {
+        top: 70px;
+        left: 5%;
+        width: 90%;
+    }
+
+    .hero-info h1 {
+        font-size: 60px;
+    }
+
+    .hero-info p {
+        font-size: 14px;
+        max-width: 80%;
+    }
+
+    .hero-info button {
+        padding: 8px 25px;
+        font-size: 13px;
+    }
+
+    .REIMAGINE {
+        font-size: 40px;
+        right: 10px;
+        bottom: 20px;
+    }
+
+    .next-btn {
+        padding: 8px 20px;
+        font-size: 13px;
+        right: 15px;
+        bottom: 120px;
+    }
+
+    .about-section {
+        margin: 50px 0;
         padding: 0 10px;
     }
-    .head-left button{
-        display: none;
-    }
-    .head-right a{
-        font-size: 12px;
-        padding: 0 5px;
-    }
-    .hero-info{
-        left: 5%;
-    }
-    .hero-info h1{
-        font-size: 90px;  
-    }
-    .about-section{
-        margin: 0;
-    }
-    .about-section h1{
-        font-size: 50px;
-    }
-    .image-box{
-        width: 300px;
-        height: 500px;
-    }
-    .about-section h4, .about-section h5{
-        max-width: 350px;
+
+    .about-section h1 {
+        font-size: 40px;
         text-align: center;
     }
-    .contact-section .img-1{
-        width: 150px;
-        height: 200px;
-        right: 0;
+
+    .image-box {
+        width: 90%;
+        height: auto;
+        clip-path: none;
+        border-radius: 15px;
+    }
+
+    .about-section h4,
+    .about-section h5 {
+        font-size: 14px;
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .info-section {
+        width: 95%;
+        margin-top: 50px;
+    }
+
+    .info-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        height: auto;
+    }
+
+    .card h1 {
+        font-size: 30px;
+        left: 20px;
         top: 20px;
     }
-    .contact-section .img-2{
-        top: 30px;
-        left: -40px;
-        width: 180px;
-        height: 180px;
+
+    .card p {
+        font-size: 14px;
+        top: 70px;
+        left: 20px;
+        padding: 5px;
     }
-    .contact-section .img-3{
-        left: -40px;
-        bottom: 0;
-        width: 150px;
-        height: 180px;
+
+    .card button {
+        left: 20px;
+        bottom: 20px;
+        padding: 8px 20px;
+        font-size: 12px;
     }
-    .contact-section h1{
-        font-size: 60px;
-        max-width: 300px;
+
+    .contact-section {
+        padding: 0 10px;
+        margin-top: 50px;
+        margin-bottom: 80px;
     }
-    .footer p{
+
+    .contact-section h1 {
+        font-size: 40px;
+        max-width: 100%;
+    }
+
+    .contact-section p {
+        font-size: 14px;
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .contact-section button {
+        padding: 8px 20px;
+        font-size: 13px;
+    }
+
+    .contact-section .img-1,
+    .contact-section .img-2,
+    .contact-section .img-3 {
+        display: none; /* Hide decorative images to save space */
+    }
+
+    .footer {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .footer p {
         display: none;
     }
-    .footer ul{
-        margin-left: 70px;
+
+    .footer ul {
+        margin: 10px 0;
+        padding: 0;
+    }
+
+    .footer a {
+        font-size: 14px;
+        margin: 0 5px;
+        padding: 5px 10px;
     }
 }
