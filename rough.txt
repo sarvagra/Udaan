@@ -19,47 +19,61 @@
 }
 
 
-.info-cards{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 20px;
-    width: 100%;
-    height: 100%;
-    margin-top: 30px;
-
-}
-
-
-.image-box {
-    width: 360px;
-    height: 510px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    clip-path: polygon(8% 0, 79% 1%, 95% 100%, 20% 100%); /* <-- Add this */
-    transition: all 1s ease-in-out; /* Smooth animation */
-}
-
-
-.image-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute; /* stack images */
-    top: 0;
-    left: 0;
-}
-
-.grp {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 360px;
-    height: 510px;
-    z-index: 2;
-    object-fit: cover;
-    clip-path: polygon(8% 0, 79% 1%, 95% 100%, 20% 100%);
-    transition: all 1s ease-in-out;
+@media screen and (max-width:650px){
+    header{
+        padding: 0 10px;
+    }
+    
+    .head-right a{
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    .hero-info{
+        left: 5%;
+    }
+    .hero-info h1{
+        font-size: 90px;  
+    }
+    .about-section{
+        margin: 0;
+    }
+    .about-section h1{
+        font-size: 50px;
+    }
+    .image-box{
+        width: 300px;
+        height: 500px;
+    }
+    .about-section h4, .about-section h5{
+        max-width: 350px;
+        text-align: center;
+    }
+    .contact-section .img-1{
+        width: 150px;
+        height: 200px;
+        right: 0;
+        top: 20px;
+    }
+    .contact-section .img-2{
+        top: 30px;
+        left: -40px;
+        width: 180px;
+        height: 180px;
+    }
+    .contact-section .img-3{
+        left: -40px;
+        bottom: 0;
+        width: 150px;
+        height: 180px;
+    }
+    .contact-section h1{
+        font-size: 60px;
+        max-width: 300px;
+    }
+    .footer p{
+        display: none;
+    }
+    .footer ul{
+        margin-left: 70px;
+    }
 }
