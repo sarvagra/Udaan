@@ -1,5 +1,5 @@
 
-.body{
+body{
     margin:0;
     padding:0;
     background-color: black;
@@ -17,7 +17,7 @@
 }
 
 header{
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -184,20 +184,26 @@ header{
     color: white;
 }
 
-.image-box{
+.image-box {
     width: 360px;
     height: 510px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50px;
+    position: relative;
+    clip-path: polygon(8% 0, 79% 1%, 95% 100%, 20% 100%); /* <-- Add this */
+    transition: all 1s ease-in-out; /* Smooth animation */
 }
 
-.image-box img{
+
+.image-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    position: absolute; /* stack images */
+    top: 0;
+    left: 0;
 }
 
 .about-section p{
@@ -258,7 +264,7 @@ header{
 
 .about-section h5{
     margin-top: 5px;
-    color: gray;
+    color: rgb(229, 228, 228);
     max-width: 425px;
     text-align: center;
     line-height: 25px;
@@ -270,6 +276,7 @@ header{
     position: relative;
     width: 80%;
     margin-top: 100px;
+    color: rgb(240, 240, 240);
 }
 
 .info-section h3 {
@@ -278,7 +285,7 @@ header{
 
 .info-section p{
     margin-top: 5px;
-    color: gray;
+    color: rgb(229, 228, 228);
     max-width: 400 px;
     line-height: 25px;
 }
@@ -435,3 +442,232 @@ header{
     height: 20;
 }
 
+.contact-section{
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin-bottom: 100px; 
+}
+
+.contact-section .img-1{
+    position: absolute;
+    top: 30%;
+    right: 50px;
+    height: 350px;
+    clip-path: polygon(33% 0, 100% 0%, 75% 100%, 0% 100%);
+}
+
+.contact-section .img-2{
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    height: 200px;
+    clip-path: polygon(18% 0, 75% 0%, 100% 50%, 100% 100%, 25% 100%, 0% 50%);
+}
+
+.contact-section .img-3 {
+    position: absolute;
+    top: 350px; 
+    left: 8%;
+    height: 250px;
+    width: 250px;
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+
+.contact-section p{
+    margin-top: 100px;
+}
+
+.contact-section h1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 70px;
+    max-width: 550px;
+    text-align: center;
+    background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+
+.contact-section button{
+    
+    padding:10px 25px;
+    border:1px solid gray;
+    background-color:white;
+    color: gray;
+    border-radius:20px;
+    box-shadow:0 0 5px lightgray;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-section button:hover{
+    box-shadow: 0 0 15px lightgray;
+    opacity: 0.7;
+}
+
+.footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(52, 52, 52);
+    backdrop-filter: blur(10px);
+    height: 100px;
+}
+
+.footer p{
+    margin: 0 20px;
+    color: white;
+
+}
+
+.footer ul{
+    display: flex;
+    list-style-type: none;
+    margin-right: 140px;
+}
+
+.footer a{
+    text-decoration: none;
+    color: white;
+    padding: 7px 7px;
+    border-radius: 50px;
+    border: 1px solid blue;
+    transition: 0.3s;
+    margin: 0 10px;
+}
+
+.overlay{
+    position: absolute;
+    margin-top: 22%;
+    width: 500px;
+    z-index: 2;
+}
+/* blur animation */
+
+.autoBlur{
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation{
+    0%{
+        filter: blur(40px);
+    }
+    40%,60%{
+        filter: blur(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100%{
+        filter: blur(40px);
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+
+/* Image expansion animation */
+
+.autoTakeFull{
+    animation: autoTakeFullAnimation both;
+    animation-timeline: view(70% 65%);
+}
+
+@keyframes autoTakeFullAnimation{
+    to{
+        width:100%;
+        height: 100vh;
+        border-radius: 0;
+        margin-bottom: 100px;
+        clip-path: none;
+    }
+}
+
+/*Auto Display Class*/
+.autoDisplay{
+    animation: autoDisplayAnimation both;
+    animation-timeline: view(70% 5%);
+}
+
+@keyframes autoDisplayAnimation{
+    from{
+        opacity: 0;
+        transform: translateY(200px) scale(0.3);
+    } to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@media screen and (max-width:650px){
+    header{
+        padding: 0 10px;
+    }
+    .head-left button{
+        display: none;
+    }
+    .head-right a{
+        font-size: 12px;
+        padding: 0 5px;
+    }
+    .hero-info{
+        left: 5%;
+    }
+    .hero-info h1{
+        font-size: 90px;  
+    }
+    .about-section{
+        margin: 0;
+    }
+    .about-section h1{
+        font-size: 50px;
+    }
+    .image-box{
+        width: 300px;
+        height: 500px;
+    }
+    .about-section h4, .about-section h5{
+        max-width: 350px;
+        text-align: center;
+    }
+    .contact-section .img-1{
+        width: 150px;
+        height: 200px;
+        right: 0;
+        top: 20px;
+    }
+    .contact-section .img-2{
+        top: 30px;
+        left: -40px;
+        width: 180px;
+        height: 180px;
+    }
+    .contact-section .img-3{
+        left: -40px;
+        bottom: 0;
+        width: 150px;
+        height: 180px;
+    }
+    .contact-section h1{
+        font-size: 60px;
+        max-width: 300px;
+    }
+    .footer p{
+        display: none;
+    }
+    .footer ul{
+        margin-left: 70px;
+    }
+}
