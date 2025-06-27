@@ -26,7 +26,7 @@ header{
     justify-content: space-between;
     padding: 10px 40px;
     z-index: 999;
-    
+    border-radius: 0 0 15px 15px;
     backdrop-filter: blur(20px);
 }
 
@@ -70,7 +70,7 @@ header{
 }
 
 .hero-vid{
-    position: relative;
+    object-fit: cover;
     width: 100%;
     height: 100%;
 }
@@ -87,6 +87,12 @@ header{
     position: absolute;
     top: 88px;
     left: 50px;
+}
+
+.hero-info .tkof{
+    height: 110px; 
+    vertical-align: middle; 
+    margin-top:10px;
 }
 
 .hero-info h1{
@@ -394,9 +400,7 @@ header{
     
 }
 
-.card:nth-child(5){
-    width: 50vw;
-}
+
 
 .card:nth-child(1) h1 {
     background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
@@ -561,12 +565,15 @@ header{
     text-decoration: none;
     color: white;
     padding: 7px 7px;
-    border-radius: 50px;
-    border: 1px solid blue;
     transition: 0.3s;
     margin: 0 10px;
 }
 
+.footer a:hover{
+    
+    color: rgb(0, 72, 255);
+    
+}
 .overlay{
     position: absolute;
     margin-top: 22%;
@@ -585,6 +592,22 @@ header{
         filter: blur(40px);
     }
     40%,60%{
+        filter: blur(0px);
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    100%{
+        filter: blur(40px);
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+}
+
+@keyframes autoBlurAnimationMobile{
+    0%{
+        filter: blur(40px);
+    }
+    40%,61%{
         filter: blur(0px);
         transform: translateY(0px);
         opacity: 1;
@@ -631,165 +654,158 @@ header{
 }
 
 @media screen and (max-width: 650px) {
-    header {
-        padding: 10px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .head-left img {
-        width: 45px;
-        height: 42px;
-    }
-
-    .head-right {
-        margin-top: 5px;
-        flex-wrap: wrap;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .head-right a {
-        font-size: 12px;
+    header{
         padding: 5px 10px;
-    }
-
-    .hero-info {
-        top: 70px;
-        left: 5%;
-        width: 90%;
-    }
-
-    .hero-info h1 {
-        font-size: 60px;
-    }
-
-    .hero-info p {
-        font-size: 14px;
-        max-width: 80%;
-    }
-
-    .hero-info button {
-        padding: 8px 25px;
-        font-size: 13px;
-    }
-
-    .REIMAGINE {
-        font-size: 40px;
-        right: 10px;
-        bottom: 20px;
-    }
-
-    .next-btn {
-        padding: 8px 20px;
-        font-size: 13px;
-        right: 15px;
-        bottom: 120px;
-    }
-
-    .about-section {
-        margin: 50px 0;
-        padding: 0 10px;
-    }
-
-    .about-section h1 {
-        font-size: 40px;
-        text-align: center;
-    }
-
-    .image-box {
-        width: 90%;
-        height: auto;
-        clip-path: none;
-        border-radius: 15px;
-    }
-
-    .about-section h4,
-    .about-section h5 {
-        font-size: 14px;
-        max-width: 90%;
-        text-align: center;
-    }
-
-    .info-section {
         width: 95%;
-        margin-top: 50px;
+        z-index: 999;
     }
-
-    .info-cards {
-        grid-template-columns: 1fr;
+    .overlay{
+        top: 117vh;
+        width: 400px;
     }
-
-    .card {
-        height: auto;
-    }
-
-    .card h1 {
-        font-size: 30px;
-        left: 20px;
-        top: 20px;
-    }
-
-    .card p {
-        font-size: 14px;
-        top: 70px;
-        left: 20px;
-        padding: 5px;
-    }
-
-    .card button {
-        left: 20px;
-        bottom: 20px;
-        padding: 8px 20px;
+     .head-right a{
         font-size: 12px;
+        padding: 0 5px;
     }
 
-    .contact-section {
-        padding: 0 10px;
-        margin-top: 50px;
-        margin-bottom: 80px;
+    .hero-info{
+        left: 5%;
     }
 
-    .contact-section h1 {
-        font-size: 40px;
-        max-width: 100%;
+    .head-right a{
+        font-size: 12px;
+        padding: 0 5px;
     }
 
-    .contact-section p {
-        font-size: 14px;
+    .hero-info{
+        left: 5%;
+    }
+    .hero-info .tkof{
+    height: 80px; 
+    vertical-align: middle; 
+    margin-top:10px;
+    }
+    .hero-section h1{
+        font-size: 50px;
+    }
+    .hero-info button{
+    background-color: #edff66;
+    border: 2px solid #edff66;
+    padding: 10px 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: black;
+    transition: 0.4s;
+    font-size: 12px;
+    font-weight: bold;
+    }
+    .next-btn{
+    font-size: 12px;
+    right: 35px;
+    bottom: 110px;
+    }
+    
+    .about-section{
+        margin: 0;
+    }
+    .about-section h1{
+        font-size: 50px;
+    }
+    .image-box{
+        height: 300px;
+        width: 200px;
+    }
+    .autoTakeFull{
+        animation: autoTakeFullAnimation both;
+        animation-timeline: view(70% 60%);
+    }
+    .about-section h4, .about-section h5{
+        max-width: 350px;
         text-align: center;
-        margin: 40px 0;
     }
-
-    .contact-section button {
-        padding: 8px 20px;
+    .contact-section .img-1{
+        width: 100px;
+        height: 150px;
+        right: 0;
+        top: 200px;
+        z-index: -99;
+    }
+    .contact-section .img-2{
+        width: 120px;
+        height: 100px;
+        left: 30px;
+        top: 60px;
+    }
+    .contact-section .img-3{
+        width: 100px;
+        height: 100px;
+        left: 30px;
+        top: 410px;
+    }
+    .contact-section h1{
+        font-size: 50px;
+        max-width: 300px;
+    }
+    
+    .card h1{
+        font-size: 25px;
+        left: 20px;
+    }
+    .card p{
+        font-size: 9px;
+        max-width: 300px;
+        line-height: 10px;
+        top: 40px;
+        left: 10px;
+    }
+    .card:nth-child(1) p, .card:nth-child(2) p, .card:nth-child(3) p{
+        display:none;
+    }
+    .card button{
+        left: 20px;
         font-size: 13px;
+        bottom: 5%;
     }
-
-    .contact-section .img-1,
-    .contact-section .img-2,
-    .contact-section .img-3 {
-        display: none; /* Hide decorative images to save space */
+    .card:nth-child(1){
+        grid-column: span 2;
+        height: 15vh;
     }
-
-    .footer {
-        flex-direction: column;
-        height: auto;
-        padding: 10px 0;
+    .card:nth-child(2){
+        grid-column: span 1;
+        height: 15vh;
     }
-
-    .footer p {
+    .card:nth-child(3){
+        grid-column: span 1;
+        height: 15vh;
+    }
+    .card:nth-child(4){
+        grid-column: span 2;
+        height: 15vh;
+    }
+    .card:nth-child(5){
+        grid-column: span 2;
+        height: 15vh;
+        
+    }
+    .card:nth-child(6){
+        grid-column: span 2;
+        height: 15vh;
+    }
+    .footer{
+        height: 5vh;
+    }
+    .footer p{
         display: none;
     }
-
-    .footer ul {
-        margin: 10px 0;
-        padding: 0;
+    .footer ul{
+        margin-left:13vh;
     }
-
-    .footer a {
-        font-size: 14px;
-        margin: 0 5px;
-        padding: 5px 10px;
+    .autoBlur{
+        animation: autoBlurAnimationMobile linear both;
+        animation-timeline: view();
     }
+    .footer a{
+        padding: 0px 0px;
+    }
+    
 }
