@@ -37,14 +37,8 @@
   animation: swipeAnimation 1s infinite ease-in-out;
 }
 
-/* 🔇 Stop animation on hover */
-.next-btn:hover {
-  animation-play-state: paused;
-  background-color: transparent;
-  color: white;
-  text-shadow: 0 0 18px;
-  box-shadow: 0 0 15px #edff66;
-}
+
+
 
 
 
