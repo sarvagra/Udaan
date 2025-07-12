@@ -1,46 +1,33 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const homeBtn = document.getElementById("home-btn");
-    const eventsBtn = document.getElementById("events-btn");
-    const aboutBtn = document.getElementById("about-btn");
-    const contactBtn = document.getElementById("contact-btn");
-    
-    if (homeBtn) {
-        homeBtn.addEventListener("click", function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+    const scrollToSection = (id) => {
+        const section = document.getElementById(id);
+        if (section) {
+            // Use requestAnimationFrame to wait for layout
+            requestAnimationFrame(() => {
+                setTimeout(() => {
+                    section.scrollIntoView({ behavior: "smooth" });
+                }, 100); // Adjust timeout if still glitchy
             });
-        });
-    }
+        }
+    };
 
-    if (eventsBtn) {
-        eventsBtn.addEventListener("click", function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 3250,
-                behavior: 'smooth'
-            });
-        });
-    }
+    document.getElementById("home-btn")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollToSection("home-section");
+    });
 
-    if (aboutBtn) {
-        aboutBtn.addEventListener("click", function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 1000,
-                behavior: 'smooth'
-            });
-        });
-    }
+    document.getElementById("events-btn")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollToSection("event-section")
+    });
 
-    if (contactBtn) {
-        contactBtn.addEventListener("click", function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 7000,
-                behavior: 'smooth'
-            });
-        });
-    }
+    document.getElementById("about-btn")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollToSection("about-section");
+    });
+
+    document.getElementById("contact-btn")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollToSection("contact-section");
+    });
 });
