@@ -6,13 +6,16 @@
     <title>Udaan</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+    <link rel="icon" type="image/png" href="res/logo.png">
 
  </head>
  <body>
     <div class="container">
         <header>
             <div class="head-left">
+                <a href="https://udaan-io.netlify.app/"></a>
                 <img src="res/logo.png" alt="logo" />
+                </a>
         
             </div>
             
@@ -22,16 +25,20 @@
                 <p><a href="#" id="about-btn">About Us</a></p>
                 <p><a href="#" id="events-btn">Events</a></p>
                 
-                <p><a href="#" id="contact-btn">Contact Us</a></p>
+                <p><a href="https://wa.me/qr/V627MFCTFSZOC1" id="contact-btn">Contact Us</a></p>
                 <p><a href="#" id="share-btn">Share</a></p>
+                <div id="share-popup">Link copied!</div>
+                <script>
+                
+                </script>
                 <div class="hover-box" id="hover-box"></div>
             </div>
         </header>
 
         <section class="hero-section autoBlur" id="home-section">
             <div class="hero-vid">
-                <video autoplay muted loop playsinline class="hero-video">
-                <source src="res/hero-1.webm" type="video/webm">
+                <video id="slow" autoplay muted loop playsinline class="hero-video">
+                <source src="res/hero-1.mp4" type="video/webm">
                 <source src="res/hero-1.mp4" type="video/mp4">
                 Your browser does not support the video tag.
                 </video>
@@ -41,7 +48,7 @@
                     <img src="res/tkof.png" class="tkof">
 
                     <p>As Udaan takes flight—sweeping through a whirlwind of creativity, innovation, and unity. From thought provoking talks to electrifying fests, every event sparks ambition and strengthens our campus spirit. This isn’t just a club-- it’s your launchpad to rise beyond the ordinary. Let your dreams soar. Let them begin with Udaan.</p>
-                    <button>Visit our Gallery</button>
+                    <a href="https://chat.whatsapp.com/IBBTIbSIi4GKeEtRlDdckb"><button>Join Community</a></button>
                 </div>
 
                 <h1 class="REIMAGINE">Reimagine.</h1>
@@ -78,63 +85,58 @@
                 <video src="res/concierto.mp4" autoplay loop muted playsinline></video>
                 <button id="openModal">Register</button>
             </div>
+            <div class="card autoDisplay">
+            <div class="card">
+            <h1>Aventura</h1>
+            <p>Adventure begins where lectures end. Udaan takes LPU beyond classrooms with unforgettable trips across India—snowy peaks, golden sunsets, and lasting memories. Travel with Udaan and turn wanderlust into legacy.</p>
+            <video id="slow" src="res/adventura.mp4" autoplay loop muted plays-inline></video> 
+            <button>Coming Soon</button> 
+            </div>                 
+        </div> 
 
-            <!-- Modal -->
-            <div class="modal" id="modal">
-                <div class="modal-content" id="modalContent">
+        <div class="card autoDisplay">
+            <div class="card">
+            <h1>Incoming!</h1> 
+            <h3>Oh yes, we're always creating something for you!</h3>
+            <video src="res/coming-soon.mp4" autoplay loop muted plays-inline></video>        
+            </div>         
+        </div>
+
+        </section>
+        <div class="modal" id="modal" style="display:none;">
+            <div class="modal-content" id="modalContent">
                 <button class="close-btn" id="closeModal">&times;</button>
                 <h2>Register Now - Udaan Freshers</h2>
                 <h4>@250/- Only per-ticket</h4>
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Your Email" required />
-                <input type="tel" placeholder="Your Phone Number" required />
-                <p>Note* You will recieve the ticket on E-mail and SMS</p>
-                <button class="continue-btn">Continue to Pay</button>
-                </div>
+                <input type="text" id="name" placeholder="Your Name" required />
+                <input type="email" id="email" placeholder="Your Email" required />
+                <input type="tel" id="phone" placeholder="Your Phone Number" required />
+                <p>Note* You will receive the ticket on E-mail and SMS</p>
+                <button class="continue-btn" id="payBtn">Continue to Pay</button>
             </div>
-            
+        </div>
+
+        
 
 
 
 
 
-
-
-
-
-                
+                <!--
                 <div class="card autoDisplay">
                     <h1>Hackathons</h1>
                     <p>Udaan’s hackathons fuse tech, caffeine, and creativity into one high-voltage experience. Think 24 hours of rapid prototyping, buzzing minds, and breakthrough ideas. It’s not just code—it’s culture. At LPU, these events are launchpads where innovation ignites, collaboration thrives, and the next big thing gets its start.</p>
                     <video src="res/hackathon.mp4" autoplay loop muted plays-inline></video>
                     <button>Coming Soon </button>
                 </div>
-
-                <div class="card autoDisplay">
-                    <h1>Aventura</h1>
-                    <p>Adventure begins where lectures end. Udaan takes LPU beyond classrooms with unforgettable trips across India—snowy peaks, golden sunsets, and lasting memories. Travel with Udaan and turn wanderlust into legacy.</p>
-                    <video id="slow" src="res/adventura.mp4" autoplay loop muted plays-inline></video> 
-                    <button>Coming Soon</button>                  
-                </div> 
-
+                
                 <div class="card autoDisplay">
                 <h1>Embark</h1>
                 <p>On your new journey with us ...</p>
                 <video src="res/embark.mp4"  autoplay loop muted plays-inline></video>
                 <button>Coming Soon</button>                 
                 </div>
-
-                
-
-                
-
-               
-
-                <div class="card autoDisplay">
-                    <h1>Incoming!</h1> 
-                    <p>Oh yes, we're always creating something for you!</p>
-                    <video src="res/coming-soon.mp4" autoplay loop muted plays-inline></video>                 
-                </div>
+                -->
 
             </div>
         </section>
@@ -144,8 +146,9 @@
             <div class="autoBlur"  >
                 <h1>BRING ABOUT THE NEW ERA OF UNIVERSITY EVENTS</h1>
             </div>
-            
-            <button>Contact Us </button>
+            <a href="https://wa.me/qr/V627MFCTFSZOC1" target="_blank" rel="noopener">
+                <button>Contact Us </button>
+            </a>
             <img class="img-1" src="res/img-1.png" alt="contact-img">
             <img class="img-2" src="res/img-2.jpg" alt="contact-img">
             <img class="img-3" src="res/logo.png" alt="contact-img">
@@ -162,35 +165,15 @@
             <p>Privacy Policy</p>
         </section>
     </div>
+
+    
+    <!--payment script-->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+
     <script src="app.js"></script>
-
     <script>
-    const video = document.getElementById("slow");
-    video.playbackRate = 0.8; // 1 = normal, 1.5 = 1.5x speed
-    </script>
-    <script>
-    const openModalBtn = document.getElementById('openModal');
-    const modal = document.getElementById('modal');
-    const modalContent = document.getElementById('modalContent');
-    const closeModalBtn = document.getElementById('closeModal');
-
-    openModalBtn.addEventListener('click', () => {
-      modal.style.display = 'flex';
-      document.body.classList.add('modal-open');
-    });
-
-    closeModalBtn.addEventListener('click', () => {
-      modal.style.display = 'none';
-      document.body.classList.remove('modal-open');
-    });
-
-    // Close on outside click
-    modal.addEventListener('click', (e) => {
-      if (!modalContent.contains(e.target)) {
-        modal.style.display = 'none';
-        document.body.classList.remove('modal-open');
-      }
-    });
+    
   </script>
     
  </body>
