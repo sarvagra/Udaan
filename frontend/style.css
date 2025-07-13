@@ -118,6 +118,7 @@ header{
     border-radius: 20px;
     cursor: pointer;
     color: black;
+    
     transition: 0.4s;
     font-size: 12px;
     font-weight: bold;
@@ -136,7 +137,7 @@ header{
     margin: 0;
     position: absolute;
     right: 20px;
-    bottom: 56px;
+    bottom: 60px;
     color: white;
 }
 
@@ -375,7 +376,7 @@ header{
 .card:nth-child(1) h1 {
     background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
     background-size: 200%;
-    text-shadow: 5px 5px 0 white;
+    text-shadow: 3px 3px 0 white;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -385,7 +386,7 @@ header{
 .card:nth-child(2) h1 {
     background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
     background-size: 200%;
-    text-shadow: 5px 5px 0 white;
+    text-shadow: 3px 3px 0 white;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -395,7 +396,7 @@ header{
 .card:nth-child(2) h1 {
     background: linear-gradient(to right,#ffb347, #ffcc33, #fceabb, #f8b500, #f6e27a, #f9d423, #ffb347);
     background-size: 200%;
-    text-shadow: 5px 5px 0 black;
+    text-shadow: 3px 3px 0 black;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -405,7 +406,7 @@ header{
     max-width: 300px;
     background: linear-gradient(to right, #fc466b, #3f5efb, #00c6ff, #2af598, #009efd, #667db6, #fc466b);
     background-size: 200%;
-    text-shadow: 5px 5px 0 white;
+    text-shadow: 3px 3px 0 white;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -653,7 +654,7 @@ header{
     right: 10px;
     background-color: #1c1c1c;
     border: 2px;
-    color: orange;
+    color: whitesmoke;
     padding: 10px 16px;
     border-radius: 10px;
     font-size: 12px;
@@ -781,6 +782,7 @@ header{
         grid-column: span 2;
         height: 15vh;
     }
+    
   .modal {
     animation: none;
     border-radius: 10px;
@@ -821,6 +823,7 @@ body.modal-open {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
   .modal h4{
+    color: greenyellow;
     margin-left: 2px;
     margin-top: 0px;
     font-size: 11px;
@@ -836,6 +839,7 @@ body.modal-open {
     
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+    color: rgb(255, 47, 47);
   }
   .modal-content input {
     margin-top: 0px;
@@ -843,13 +847,14 @@ body.modal-open {
     width: 90%;
     padding: 12px;
     border: none;
+    color:white;
     border-radius: 5px;
     background-color: #333;
     
   }
 
   .modal-content input::placeholder {
-    color: #aaa;
+    color: white;
   }
 
   .continue-btn {
