@@ -140,45 +140,6 @@ header{
     color: white;
 }
 
-@keyframes swipeAnimation {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.next-btn {
-  background-color: #edff66;
-  border: 2px solid #edff66;
-  padding: 10px 40px;
-  border-radius: 20px;
-  cursor: pointer;
-  color: black;
-  font-size: 15px;
-  font-weight: bold;
-  transition: 0.4s;
-
-  position: absolute;
-  right: 55px;
-  bottom: 165px;
-  z-index: 10;
-
-  animation: swipeAnimation 1s infinite ease-in-out;
-}
-
-/* 🔇 Stop animation on hover */
-.next-btn:hover {
-  animation-play-state: paused;
-  background-color: transparent;
-  color: white;
-  text-shadow: 0 0 18px;
-  box-shadow: 0 0 15px #edff66;
-}
 
 .about-section{
     width: 100%;
@@ -191,15 +152,15 @@ header{
 }
 
 .image-box {
-    width: 360px;
-    height: 510px;
+    width: 300px;
+    height: 550px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    clip-path: polygon(8% 0, 79% 1%, 95% 100%, 20% 100%); /* <-- Add this */
-    transition: all 1s ease-in-out; /* Smooth animation */
+    border-radius: 20px;
+    transition: all 2s ease-in-out; /* Smooth animation */
 }
 
 
@@ -381,24 +342,73 @@ header{
 .card:nth-child(1){
     grid-column: span 2;
 }
+
+
+.modal {
+display: none;
+position: fixed;
+z-index: 9999;
+left: 0; top: 0;
+width: 100vw; height: 100vh;
+background: rgba(0, 0, 0, 0.8);
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.modal-content {
+background: #222;
+color: white;
+padding: 2rem;
+border-radius: 10px;
+width: 90%;
+max-width: 400px;
+position: relative;
+box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.modal-content input {
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+border: none;
+border-radius: 5px;
+}
+
+.modal-content button {
+background: #ff5c5c;
+color: white;
+border: none;
+padding: 10px 15px;
+margin-top: 10px;
+border-radius: 5px;
+cursor: pointer;
+width: 100%;
+}
+
+.close-btn {
+position: absolute;
+top: 10px; right: 15px;
+font-size: 20px;
+background: none;
+border: none;
+color: white;
+cursor: pointer;
+}
+
+
 .card:nth-child(2){
     grid-row: span 2;
-    height: 57vh;
-    
-}
-.card:nth-child(3) p{
-    max-width: 350px;
-    
-}
 
-.card:nth-child(3){
-    height: 38vh;
 }
-
-.card:nth-child(4){
-    height: 17vh;
     
-}
+
+    
+
+    
+
+
+
 
 
 
@@ -653,6 +663,22 @@ header{
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 650px) {
     header{
         padding: 5px 10px;
@@ -661,7 +687,7 @@ header{
     }
     .overlay{
         top: 120vh;
-        width: 400px;
+        width: 380px;
     }
      .head-right a{
         font-size: 12px;
@@ -699,11 +725,6 @@ header{
     font-size: 12px;
     font-weight: bold;
     }
-    .next-btn{
-    font-size: 12px;
-    right: 35px;
-    bottom: 110px;
-    }
     
     .about-section{
         margin: 0;
@@ -713,11 +734,13 @@ header{
     }
     .image-box{
         height: 300px;
-        width: 200px;
+        width: 160px;
+        border-radius: 20px;
+        transition: all 2s ease-in-out; /* Smooth animation */
     }
     .autoTakeFull{
         animation: autoTakeFullAnimation both;
-        animation-timeline: view(70% 60%);
+        animation-timeline: view(60% 60%);
     }
     .about-section h4, .about-section h5{
         max-width: 350px;
@@ -748,7 +771,7 @@ header{
     }
     
     .card h1{
-        font-size: 25px;
+        font-size: 30px;
         left: 20px;
     }
     .card p{
@@ -758,7 +781,7 @@ header{
         top: 40px;
         left: 10px;
     }
-    .card:nth-child(1) p, .card:nth-child(2) p, .card:nth-child(3) p{
+    .card:nth-child(1) p, .card:nth-child(2) p, .card:nth-child(3) p, .card:nth-child(4) p{
         display:none;
     }
     .card button{
@@ -770,26 +793,90 @@ header{
         grid-column: span 2;
         height: 15vh;
     }
+    .modal {
+        
+        position: fixed;
+        z-index: 9999;
+        left: 15px; top: 0;
+        width: 300px; height: 600px;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: none;
+    }
+
+    .modal-content {
+    background: #222;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    }
+
+    .modal-content button {
+    background: #ff5c5c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    }
+
+    .close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    }
+
+
+.card:nth-child(2){
+    grid-row: span 2;
+
+}
     .card:nth-child(2){
         grid-column: span 1;
         height: 15vh;width: 40vw;
+        display: none;
     }
     .card:nth-child(3){
         grid-column: span 1;
         height: 15vh;
+        display: none;
     }
     .card:nth-child(4){
         grid-column: span 2;
         height: 15vh;
+        
     }
     .card:nth-child(5){
         grid-column: span 2;
         height: 15vh;
-        
+        display: none;
     }
     .card:nth-child(6){
         grid-column: span 2;
-        height: 15vh;
+        height: 20vh;
+    }
+    .contact-section button{
+        margin-left: 70px;
     }
     .footer{
         height: 5vh;
@@ -798,7 +885,7 @@ header{
         display: none;
     }
     .footer ul{
-        margin-left:11vh;
+        margin-left: 28.5vw;
     }
     .autoBlur{
         animation: autoBlurAnimationMobile linear both;

@@ -6,6 +6,7 @@
     <title>Udaan</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+
  </head>
  <body>
     <div class="container">
@@ -44,7 +45,7 @@
                 </div>
 
                 <h1 class="REIMAGINE">Reimagine.</h1>
-                <button class="next-btn">> ></button>
+                
             </div>
         </section>
         <section class="about-section ">
@@ -65,47 +66,70 @@
             <p>From electrifying concerts and tech-packed hackathons to unforgettable trips and cultural fests, we bring students together to create, explore, and celebrate. Based in LPU, our club is the heartbeat of innovation and adventure on campus—one event at a time.</p>
             
             <div class="info-cards autoDisplay">
-                <div class="card">
-                    <h1>Concierto</h1>
-                    <p>Udaan sets the stage for LPU’s most epic concerts—where music, energy, and crowd frenzy collide. With dazzling lights, electrifying lineups, and unforgettable vibes, our shows aren’t just events—they’re legends in the making. Join the roar, feel the rhythm, and be part of LPU’s loudest, proudest moments with Udaan.</p>
-                    <video src="res/concierto.mp4" autoplay loop muted plays-inline></video>
-                    <button>Register</button>
+            
+            <div class="card">
+                <h1>Concierto</h1>
+                <p>
+                Udaan sets the stage for LPU’s most epic concerts—where music, energy, and crowd frenzy collide.
+                With dazzling lights, electrifying lineups, and unforgettable vibes, our shows aren’t just events—
+                they’re legends in the making. Join the roar, feel the rhythm, and be part of LPU’s loudest, proudest moments with Udaan.
+                </p>
+
+                <video src="res/concierto.mp4" autoplay loop muted playsinline></video>
+                <button id="openModal">Register</button>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal" id="modal">
+                <div class="modal-content" id="modalContent">
+                <button class="close-btn" id="closeModal">&times;</button>
+                <h2>Register Now</h2>
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <input type="tel" placeholder="Your Phone Number" required />
+                <button>Continue to Pay</button>
                 </div>
+            </div>
+            
+
+
+
+
+
+
+
+
+
                 
                 <div class="card autoDisplay">
                     <h1>Hackathons</h1>
                     <p>Udaan’s hackathons fuse tech, caffeine, and creativity into one high-voltage experience. Think 24 hours of rapid prototyping, buzzing minds, and breakthrough ideas. It’s not just code—it’s culture. At LPU, these events are launchpads where innovation ignites, collaboration thrives, and the next big thing gets its start.</p>
                     <video src="res/hackathon.mp4" autoplay loop muted plays-inline></video>
-                    <button>Register</button>
+                    <button>Coming Soon </button>
                 </div>
 
                 <div class="card autoDisplay">
                     <h1>Aventura</h1>
                     <p>Adventure begins where lectures end. Udaan takes LPU beyond classrooms with unforgettable trips across India—snowy peaks, golden sunsets, and lasting memories. Travel with Udaan and turn wanderlust into legacy.</p>
                     <video id="slow" src="res/adventura.mp4" autoplay loop muted plays-inline></video> 
-                    <button>Register</button>                  
+                    <button>Coming Soon</button>                  
                 </div> 
 
                 <div class="card autoDisplay">
                 <h1>Embark</h1>
                 <p>On your new journey with us ...</p>
                 <video src="res/embark.mp4"  autoplay loop muted plays-inline></video>
-                <button>Join Us</button>                 
+                <button>Coming Soon</button>                 
                 </div>
 
                 
 
-                <div class="card autoDisplay">
-                    <h1>Your Leaders</h1>
-                    <p>The phenomenals who keep this club growing  </p>
-                    <video src="res/leaders.mp4" autoplay loop muted plays-inline></video>
-                    <button>Discover</button>
-                </div>
+                
 
                
 
                 <div class="card autoDisplay">
-                    <h1>Coming-Soon</h1> 
+                    <h1>Incoming!</h1> 
                     <p>Oh yes, we're always creating something for you!</p>
                     <video src="res/coming-soon.mp4" autoplay loop muted plays-inline></video>                 
                 </div>
@@ -142,5 +166,30 @@
     const video = document.getElementById("slow");
     video.playbackRate = 0.8; // 1 = normal, 1.5 = 1.5x speed
     </script>
+    <script>
+    const openModalBtn = document.getElementById('openModal');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modalContent');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    openModalBtn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      document.body.classList.add('modal-open');
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.body.classList.remove('modal-open');
+    });
+
+    // Close on outside click
+    modal.addEventListener('click', (e) => {
+      if (!modalContent.contains(e.target)) {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open');
+      }
+    });
+  </script>
+    
  </body>
 </html>

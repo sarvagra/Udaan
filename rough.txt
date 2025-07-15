@@ -18,3 +18,72 @@
     transition: 0.3s;
 }
 
+.next-btn {
+  background-color: #edff66;
+  border: 2px solid #edff66;
+  padding: 10px 40px;
+  border-radius: 20px;
+  cursor: pointer;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.4s;
+
+  position: absolute;
+  right: 55px;
+  bottom: 165px;
+  z-index: 10;
+
+  animation: swipeAnimation 1s infinite ease-in-out;
+}
+
+/* 🔇 Stop animation on hover */
+.next-btn:hover {
+  animation-play-state: paused;
+  background-color: transparent;
+  color: white;
+  text-shadow: 0 0 18px;
+  box-shadow: 0 0 15px #edff66;
+}
+
+
+
+<button id="register-btn">Register</button>
+                </div>
+                <!-- Popup Form moved outside cards for proper overlay and styling -->
+                <div id="popup-form" class="popup-form" style="display:none;">
+                    <div class="popup-content">
+                        <button id="close-popup" style="float:right; font-size:1.2em; background:none; border:none; cursor:pointer;">&times;</button>
+                        <h2>Register for Concierto</h2>
+                        <form id="registration-form">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required />
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required />
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required />
+                            <button type="submit" id="continue-btn">Continue to Pay</button>
+                        </form>
+                    </div>
+                </div>
+                    <script>
+                    document.getElementById('register-btn').onclick = function() {
+                        document.getElementById('popup-form').style.display = 'flex';
+                    };
+                    document.getElementById('close-popup').onclick = function() {
+                        document.getElementById('popup-form').style.display = 'none';
+                    };
+                    document.getElementById('registration-form').onsubmit = function(e) {
+                        e.preventDefault();
+                        // Add payment logic here
+                        alert('Proceeding to payment...');
+                        document.getElementById('popup-form').style.display = 'none';
+                    };
+                    // Close popup when clicking outside popup-content
+                    document.getElementById('popup-form').onclick = function(e) {
+                        if (e.target === this) {
+                            this.style.display = 'none';
+                        }
+                    };
+                    </script>
+                </div>
